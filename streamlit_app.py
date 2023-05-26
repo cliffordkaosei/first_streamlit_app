@@ -39,7 +39,8 @@ try:
     fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + fruit_choice)  #Import requests
     fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())  # Normalises the fruityvice data
     streamlit.dataframe(fruityvice_normalized)  # puts the data into a new dataframe
- except URLError as e:
+except URLError as e:
+ 
   streamlit.error()
     
 streamlit.header("Fruityvice Fruit Advice!")
